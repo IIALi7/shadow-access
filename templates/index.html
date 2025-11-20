@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadow Access - Login</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px;
+        }
+        .card {
+            background-color: #020617;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 420px;
+            width: 100%;
+            border: 1px solid #1f2937;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+        }
+        h1 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+        p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+        label {
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #4b5563;
+            background-color: #020617;
+            color: #e5e7eb;
+        }
+        button {
+            margin-top: 16px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(90deg, #38bdf8, #22c55e);
+            color: #020617;
+            font-weight: 600;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .hint {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Shadow Access</h1>
+    <p>
+        Welcome to the student portal.  
+        Your identity is remembered using simple browser stored data.
+    </p>
+
+    <form method="post" action="/">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="e.g. student17">
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p class="hint">
+        You can inspect stored data using your browser tools.
+    </p>
+</div>
+</body>
+</html>

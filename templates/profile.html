@@ -5,72 +5,77 @@
     <title>Profile - Shadow Access</title>
     <style>
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: #020617;
-            color: #e5e7eb;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 0;
             min-height: 100vh;
-            padding: 16px;
+            background: radial-gradient(circle at top right, #fee2e2 0, #eef2ff 35%, #f9fafb 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
         .card {
-            background-color: #0b1120;
-            border-radius: 12px;
-            padding: 24px;
+            background-color: #ffffff;
+            border-radius: 18px;
+            padding: 26px 30px;
             max-width: 520px;
             width: 100%;
-            border: 1px solid #1f2937;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+            box-shadow:
+                0 15px 40px rgba(15, 23, 42, 0.12),
+                0 0 0 1px rgba(148, 163, 184, 0.15);
         }
         h1 {
-            color: #38bdf8;
-            margin-bottom: 4px;
+            margin: 0;
+            font-size: 1.5rem;
+            color: #4f46e5;
         }
         .subtitle {
-            color: #9ca3af;
+            margin-top: 4px;
             font-size: 0.9rem;
-            margin-bottom: 16px;
+            color: #6b7280;
         }
         .info {
-            margin-top: 8px;
+            margin-top: 16px;
             font-size: 0.95rem;
+            color: #374151;
         }
         code {
-            background-color: #020617;
+            background-color: #f3f4f6;
             padding: 2px 6px;
             border-radius: 4px;
             font-size: 0.9rem;
         }
+        .links {
+            margin-top: 18px;
+            font-size: 0.9rem;
+        }
         a {
-            color: #38bdf8;
+            color: #2563eb;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
-        .links {
-            margin-top: 16px;
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 <body>
 <div class="card">
-    <h1>Hello, {{ username }}</h1>
-    <div class="subtitle">Basic profile information stored using browser data.</div>
-
-    <div class="info">
-        <strong>Current role:</strong> <code>{{ role }}</code>
+    <h1>Welcome, {{ username }}</h1>
+    <div class="subtitle">
+        Here is the information this portal currently believes about your identity.
     </div>
 
-    <div class="info" style="margin-top: 12px;">
-        Some internal areas rely on stored client-side roles
-        for determining privileged access.
+    <div class="info">
+        <strong>Role:</strong> <code>{{ role }}</code>
+    </div>
+
+    <div class="info">
+        Some internal sections rely purely on this stored role value to decide who
+        should have elevated access. No extra verification is performed.
     </div>
 
     <div class="links">
-        <p>➜ Try accessing the admin section: <a href="{{ url_for('admin') }}">/admin</a></p>
+        <p>➜ Try visiting the admin area: <a href="{{ url_for('admin') }}">/admin</a></p>
         <p>➜ Back to login: <a href="{{ url_for('index') }}">/</a></p>
     </div>
 </div>

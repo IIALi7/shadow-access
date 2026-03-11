@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, make_respo
 
 app = Flask(__name__)
 
-FLAG = "CSC{Cookie_Role_4dmin}"
+FLAG = "D4rk{Cookie_Role_4dmin}"
 
 
 @app.route("/", methods=["GET", "POST"])
